@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('flight_final', 'rb'))
 
 @app.route('/')
 def home():
@@ -351,10 +351,10 @@ def predict():
 
         output=round(prediction[0],2)
 
-        return render_template('home.html',prediction_text="Your Flight price is Rs. {}".format(output))
+        return render_template('index.html',prediction_text="Your Flight price is Rs. {}".format(output))
 
 
-    return render_template("home.html")
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
