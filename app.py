@@ -6,7 +6,7 @@ import sklearn
 import pandas as pd
 
 app = Flask(__name__)
-model = pickle.load(open('flight_final.pkl', 'rb'))
+model = pickle.load(open('flight_rf.pkl', 'rb'))
 
 @app.route('/')
 def home():
