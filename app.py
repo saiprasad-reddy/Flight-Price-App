@@ -1,6 +1,9 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
+from flask_cors import cross_origin
 import pickle
+import sklearn
+import pandas as pd
 
 app = Flask(__name__)
 model = pickle.load(open('flight_final.pkl', 'rb'))
